@@ -78,6 +78,11 @@ html, body {
     margin-bottom: $logo-margin;
   }
 
+  // Wrapper for the logo at the top
+  .logo-wrapper {
+    padding: $logo-wrapper-padding;
+  }
+
   &>.search {
     position: relative;
 
