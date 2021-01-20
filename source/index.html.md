@@ -2,240 +2,260 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - json
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
 
 search: true
 
 code_clipboard: true
 ---
 
-# Introduction
+# Introducción
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+## La API de Cardda Crawler
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Bienvenido a la documentación de la API de Cardda Crawler! 👏
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Puedes usar esta API para acceder a endpoints que permiten
+automatizar tareas de emisión de facturas en el SII. 
 
-# Authentication
+# Facturas de venta electrónica
 
-> To authorize, use this code:
+En esta sección verás los endpoints disponibles para generar facturas electrónicas de manera
+automática. 
 
-```ruby
-require 'kittn'
+## Endpoints
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+### Generar un preview
 
-```python
-import kittn
+Generar una visualización de una factura de venta electrónica sin emitirla.
 
-api = kittn.authorize('meowmeowmeow')
-```
+| Método | Endpoint               | 
+|--------|------------------------|
+| `POST` | `/sii_preview_invoice` |
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
+Si la operación es exitosa, retorna una captura
+con los datos rellenados en el formulario del SII.
 
-```javascript
-const kittn = require('kittn');
+#### Parámetros
 
-let api = kittn.authorize('meowmeowmeow');
-```
+Los parámetros de este endpoint están
+definidos en [Parámetros comunes](#factura-parametros-comunes)
 
-> Make sure to replace `meowmeowmeow` with your API key.
+### Emitir una factura
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Emitir una factura de venta electrónica en el SII.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+| Método | Endpoint              |
+|--------|-----------------------|
+| `POST` | `/sii_create_invoice` |
 
-`Authorization: meowmeowmeow`
+Si la operación es exitosa, retorna un JSON
+con la `url` del pdf de la factura.
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+#### Parámetros
 
-# Kittens
+Los parámetros de este endpoint están
+definidos en [Parámetros comunes](#factura-parametros-comunes)
 
-## Get All Kittens
+## <span style="display: none">Factura-</span>Parámetros comunes
 
-```ruby
-require 'kittn'
+Los parámetros siguientes son comunes a todos los endpoints
+de facturas de venta electrónicas.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> Ejemplo
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "user": "12.345.678-9",
+  "password": "pass",
+  "certificate_password": "1234",
+  "rut": "987654321",
+  "phone": "56912345678",
+  "contact_name": "Tulio Triviño",
+  "charges": [
+    {
+      "name": "Servicio digital",
+      "description": "Prestación de servicio de pago y gestión en Amazon AWS",
+      "unit": "USDCLP",
+      "price": "733.73",
+      "amount": "121.12"
+    }
+  ]
 }
 ```
 
-This endpoint retrieves a specific kitten.
+| Parámetro              | Tipo              | Descripción                                                     |
+|------------------------|-------------------|-----------------------------------------------------------------|
+| `user`                 | **string**        | RUT del usuario del SII. Debe estar escrito con puntos y guión. |
+| `password`             | **string**        | Contraseña del usuario del SII.                                 |
+| `certificate_password` | **string**        | Contraseña para firmar facturas.                                |
+| `rut`                  | **string**        | RUT del receptor de la factura de venta. No debe tener puntos ni guión.                             |
+| `phone`                | **string**        | Teléfono de contacto del receptor de la factura de venta.                                           |
+| `contact_name`         | **string**        | Nombre de contacto del receptor de la factura de venta.                                            |
+| `charges`              | **array[Charge]** | Lista de cargos para cada producto. Ver [Charge](#charge)                                                |
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+## Definición de objectos
 
-### HTTP Request
+### Charge
 
-`GET http://example.com/kittens/<ID>`
+Objeto correspondiente a los datos de un producto de 
+una factura electrónica del SII.
 
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
+> Ejemplo
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+  "name": "Servicio digital",
+  "description": "Prestación de servicio de pago y gestión en Amazon AWS",
+  "unit": "USDCLP",
+  "price": "733.73",
+  "amount": "121.12"
 }
 ```
 
-This endpoint deletes a specific kitten.
+| Atributo     | Tipo       | Descripción                        |
+|---------------|------------|------------------------------------|
+| `name`        | **string** | Nombre del producto.               |
+| `description` | **string** | Descripción del producto.          |
+| `unit`        | **string** | Tipo de unidad del producto.       |
+| `price`       | **double** | Precio de una unidad del producto. |
+| `amount`      | **double** | Cantidad de unidades del producto. |
 
-### HTTP Request
+# Facturas de compra electrónica
 
-`DELETE http://example.com/kittens/<ID>`
+Cardda Crawler no solo puede emitir facturas de venta,
+sino también facturas de compra a servicios extranjeros, los endpoints descritos acá
+explican como puedes hacerlo.
 
-### URL Parameters
+## Endpoints
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+### Generar un preview
 
+Generar una visualización de una factura de compra electrónica sin emitirla.
+
+| Método | Endpoint                 |
+|--------|--------------------------|
+|`POST`  |`/sii_preview_buy_invoice`|
+
+Si la operación es exitosa, retorna una captura
+con los datos rellenados en el formulario del SII.
+
+#### Parámetros
+
+Los parámetros de este endpoint están definidos
+en [Parámetros comunes](#factura-compra-parametros-comunes)
+
+### Emitir una factura
+
+Emitir una factura de compra electrónica en el SII.
+
+| Método | Endpoint                 |
+|--------|--------------------------|
+|`POST`  |`/sii_create_buy_invoice`|
+
+Si la operación es exitosa, retorna un JSON
+con la `url` del pdf de la factura.
+
+#### Parámetros
+
+Los parámetros de este endpoint están
+definidos en [Parámetros comunes](#factura-compra-parametros-comunes)
+
+## <span style="display: none">Factura-Compra-</span>Parámetros comunes
+
+Los parámetros siguientes son comunes
+a todos los endpoints de facturas de compra electrónicas.
+
+> Ejemplo
+
+```json
+{
+    "user": "12.345.678-9",
+    "password": "password",
+    "certificate_password": "1234",
+    "description": "Invoice emitida el 05/01/2021, $10.341 CLP",
+    "service": {
+      "rut": "59292930",
+      "dv": "9",
+      "address": "410 Terry Avenue North",
+      "comuna": "Seattle",
+      "city": "Seattle",
+      "business_name": "AMAZON WEB SERVICES, INC."
+    },
+    "invoice": {
+        "day": "05",
+        "month": "01",
+        "year": "2021",
+        "chargeClp": "10341"
+    }
+}
+```
+
+| Parámetro              | Tipo         | Descripción                                                                            |
+|------------------------|--------------|----------------------------------------------------------------------------------------|
+| `user`                 | **string**   | RUT del usuario del SII. Debe estar escrito con puntos y guión.                        |
+| `password`             | **string**   | Contraseña del usuario del SII.                                                        |
+| `certificate_password` | **string**   | Contraseña para firmar facturas.                                                       |
+| `description`          | **string**   | Descripción de la factura a emitir.                                                    |
+| `service`              | **Business** | Información del servicio para el cual se hace esta factura. Ver [Business](#business). |
+| `invoice`              | **Invoice**  | Información de la factura original extranjera. Ver [Invoice](#invoice).                |
+
+## Definición de objetos
+
+### Business
+
+Objeto que describe la información de un servicio
+dado por terceros.
+
+> Ejemplo
+
+```json
+{
+  "rut": "59292930",
+  "dv": "9",
+  "address": "410 Terry Avenue North",
+  "comuna": "Seattle",
+  "city": "Seattle",
+  "business_name": "AMAZON WEB SERVICES, INC."
+}
+```
+
+| Atributo        | Tipo       | Descripción                                                     |
+|-----------------|------------|-----------------------------------------------------------------|
+| `rut`           | **string** | RUT de la empresa. No debe llevar puntos ni dígito verificador. |
+| `dv`            | **string** | Dígito verificador del RUT de la empresa.                       |
+| `address`       | **string** | Dirección legal de la empresa.                                  |
+| `comuna`        | **string** | Comuna en la que está ubicada la empresa.                       |
+| `city`          | **string** | Ciudad en la que está ubicada la empresa.                       |
+| `business_name` | **string** | Razón social de la empresa.                                     |
+
+#### Nota
+
+El nombre `comuna` no tiene un equivalente en inglés, por lo que decidimos no traducirlo y utilizar el mismo valor que en `city` para servicios extranjeros.
+
+### Invoice
+
+Objeto que describe datos de una factura extranjera.
+
+> Ejemplo
+
+```json
+{
+  "day": "01",
+  "month": "01",
+  "year": "2021",
+  "chargeClp": "90548"
+}
+```
+
+| Atributo    | Tipo       | Descripción                                                                                                                                                   |
+|-------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `day`       | **string** | Día en que se emitió la factura. Debe tener dos dígitos, si es menor a 10 se debe rellenar con 0 al principio.                                                |
+| `month`     | **string** | Mes en que se emitió la factura. Debe tener dos dígitos, si es menor a 10 se debe rellenar con 0 al principio.                                                |
+| `year`      | **string** | Año en que se emitió la factura.                                                                                                                              |
+| `chargeClp` | **string** | Monto de la factura en pesos chilenos. Si la factura es en dólares, este monto debe corresponder al valor del dólar en el día posterior a la emisión de esta. |
