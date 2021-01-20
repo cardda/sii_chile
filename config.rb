@@ -58,6 +58,9 @@ end
 # If you want Middleman to listen on a different port, you can set that below
 set :port, 4567
 
+# Middleman Live Reload
+activate :livereload
+
 helpers do
   require './lib/toc_data.rb'
 end
