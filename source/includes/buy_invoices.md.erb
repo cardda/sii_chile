@@ -1,0 +1,90 @@
+# Facturas de compra electrónica
+
+Cardda Crawler no solo puede emitir facturas de venta,
+sino también facturas de compra a servicios extranjeros, los endpoints descritos acá
+explican como puedes hacerlo.
+
+## Generar un preview
+
+Generar una visualización de una factura de compra electrónica sin emitirla.
+
+| Método | Endpoint                 |
+|--------|--------------------------|
+|`POST`  |`/sii_preview_buy_invoice`|
+
+Si la operación es exitosa, retorna una captura
+con los datos rellenados en el formulario del SII.
+
+### Parámetros
+
+<%= partial "includes/params/buy_invoice" %>
+
+## Emitir una factura
+
+Emitir una factura de compra electrónica en el SII.
+
+| Método | Endpoint                 |
+|--------|--------------------------|
+|`POST`  |`/sii_create_buy_invoice`|
+
+Si la operación es exitosa, retorna un JSON
+con la `url` del pdf de la factura.
+
+### Parámetros
+
+<%= partial "includes/params/buy_invoice" %>
+
+## Definición de objetos
+
+### Business
+
+Objeto que describe la información de un servicio
+dado por terceros.
+
+> Ejemplo
+
+```json
+{
+  "rut": "59292930",
+  "dv": "9",
+  "address": "410 Terry Avenue North",
+  "comuna": "Seattle",
+  "city": "Seattle",
+  "business_name": "AMAZON WEB SERVICES, INC."
+}
+```
+
+| Atributo        | Tipo       | Descripción                                                     |
+|-----------------|------------|-----------------------------------------------------------------|
+| `rut`           | **string** | RUT de la empresa. No debe llevar puntos ni dígito verificador. |
+| `dv`            | **string** | Dígito verificador del RUT de la empresa.                       |
+| `address`       | **string** | Dirección legal de la empresa.                                  |
+| `comuna`        | **string** | Comuna en la que está ubicada la empresa.                       |
+| `city`          | **string** | Ciudad en la que está ubicada la empresa.                       |
+| `business_name` | **string** | Razón social de la empresa.                                     |
+
+#### Nota
+
+El nombre `comuna` no tiene un equivalente en inglés, por lo que decidimos no traducirlo y utilizar el mismo valor que en `city` para servicios extranjeros.
+
+### Invoice
+
+Objeto que describe datos de una factura extranjera.
+
+> Ejemplo
+
+```json
+{
+  "day": "01",
+  "month": "01",
+  "year": "2021",
+  "chargeClp": "90548"
+}
+```
+
+| Atributo    | Tipo       | Descripción                                                                                                                                                   |
+|-------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `day`       | **string** | Día en que se emitió la factura. Debe tener dos dígitos, si es menor a 10 se debe rellenar con 0 al principio.                                                |
+| `month`     | **string** | Mes en que se emitió la factura. Debe tener dos dígitos, si es menor a 10 se debe rellenar con 0 al principio.                                                |
+| `year`      | **string** | Año en que se emitió la factura.                                                                                                                              |
+| `chargeClp` | **string** | Monto de la factura en pesos chilenos. Si la factura es en dólares, este monto debe corresponder al valor del dólar en el día posterior a la emisión de esta. |

@@ -1,0 +1,63 @@
+# Facturas de venta electrónica
+
+En esta sección verás los endpoints disponibles para generar facturas electrónicas de manera
+automática. 
+
+
+## Generar un preview
+
+Generar una visualización de una factura de venta electrónica sin emitirla.
+
+| Método | Endpoint               | 
+|--------|------------------------|
+| `POST` | `/sii_preview_invoice` |
+
+Si la operación es exitosa, retorna una captura
+con los datos rellenados en el formulario del SII.
+
+### Parámetros
+
+<%= partial "includes/params/invoice" %>
+
+## Emitir una factura
+
+Emitir una factura de venta electrónica en el SII.
+
+| Método | Endpoint              |
+|--------|-----------------------|
+| `POST` | `/sii_create_invoice` |
+
+Si la operación es exitosa, retorna un JSON
+con la `url` del pdf de la factura.
+
+### Parámetros
+
+<%= partial "includes/params/invoice" %>
+
+## Definición de objectos
+
+### Charge
+
+Objeto correspondiente a los datos de un producto de 
+una factura electrónica del SII.
+
+> Ejemplo
+
+```json
+{
+  "name": "Servicio digital",
+  "description": "Prestación de servicio de pago y gestión en Amazon AWS",
+  "unit": "USDCLP",
+  "price": "733.73",
+  "amount": "121.12"
+}
+```
+
+| Atributo     | Tipo       | Descripción                        |
+|---------------|------------|------------------------------------|
+| `name`        | **string** | Nombre del producto.               |
+| `description` | **string** | Descripción del producto.          |
+| `unit`        | **string** | Tipo de unidad del producto.       |
+| `price`       | **double** | Precio de una unidad del producto. |
+| `amount`      | **double** | Cantidad de unidades del producto. |
+
