@@ -28,9 +28,8 @@ automatizar tareas de emisión de facturas en el SII.
 En esta sección verás los endpoints disponibles para generar facturas electrónicas de manera
 automática. 
 
-## Endpoints
 
-### Generar un preview
+## Generar un preview
 
 Generar una visualización de una factura de venta electrónica sin emitirla.
 
@@ -41,12 +40,11 @@ Generar una visualización de una factura de venta electrónica sin emitirla.
 Si la operación es exitosa, retorna una captura
 con los datos rellenados en el formulario del SII.
 
-#### Parámetros
+### Parámetros
 
-Los parámetros de este endpoint están
-definidos en [Parámetros comunes](#factura-parametros-comunes)
+<%= partial "includes/params_invoice" %>
 
-### Emitir una factura
+## Emitir una factura
 
 Emitir una factura de venta electrónica en el SII.
 
@@ -57,47 +55,9 @@ Emitir una factura de venta electrónica en el SII.
 Si la operación es exitosa, retorna un JSON
 con la `url` del pdf de la factura.
 
-#### Parámetros
+### Parámetros
 
-Los parámetros de este endpoint están
-definidos en [Parámetros comunes](#factura-parametros-comunes)
-
-## <span style="display: none">Factura-</span>Parámetros comunes
-
-Los parámetros siguientes son comunes a todos los endpoints
-de facturas de venta electrónicas.
-
-> Ejemplo
-
-```json
-{
-  "user": "12.345.678-9",
-  "password": "pass",
-  "certificate_password": "1234",
-  "rut": "987654321",
-  "phone": "56912345678",
-  "contact_name": "Tulio Triviño",
-  "charges": [
-    {
-      "name": "Servicio digital",
-      "description": "Prestación de servicio de pago y gestión en Amazon AWS",
-      "unit": "USDCLP",
-      "price": "733.73",
-      "amount": "121.12"
-    }
-  ]
-}
-```
-
-| Parámetro              | Tipo              | Descripción                                                     |
-|------------------------|-------------------|-----------------------------------------------------------------|
-| `user`                 | **string**        | RUT del usuario del SII. Debe estar escrito con puntos y guión. |
-| `password`             | **string**        | Contraseña del usuario del SII.                                 |
-| `certificate_password` | **string**        | Contraseña para firmar facturas.                                |
-| `rut`                  | **string**        | RUT del receptor de la factura de venta. No debe tener puntos ni guión.                             |
-| `phone`                | **string**        | Teléfono de contacto del receptor de la factura de venta.                                           |
-| `contact_name`         | **string**        | Nombre de contacto del receptor de la factura de venta.                                            |
-| `charges`              | **array[Charge]** | Lista de cargos para cada producto. Ver [Charge](#charge)                                                |
+<%= partial "includes/params_invoice" %>
 
 ## Definición de objectos
 
@@ -132,9 +92,7 @@ Cardda Crawler no solo puede emitir facturas de venta,
 sino también facturas de compra a servicios extranjeros, los endpoints descritos acá
 explican como puedes hacerlo.
 
-## Endpoints
-
-### Generar un preview
+## Generar un preview
 
 Generar una visualización de una factura de compra electrónica sin emitirla.
 
@@ -145,12 +103,11 @@ Generar una visualización de una factura de compra electrónica sin emitirla.
 Si la operación es exitosa, retorna una captura
 con los datos rellenados en el formulario del SII.
 
-#### Parámetros
+### Parámetros
 
-Los parámetros de este endpoint están definidos
-en [Parámetros comunes](#factura-compra-parametros-comunes)
+<%= partial "includes/params_buy_invoice" %>
 
-### Emitir una factura
+## Emitir una factura
 
 Emitir una factura de compra electrónica en el SII.
 
@@ -161,49 +118,9 @@ Emitir una factura de compra electrónica en el SII.
 Si la operación es exitosa, retorna un JSON
 con la `url` del pdf de la factura.
 
-#### Parámetros
+### Parámetros
 
-Los parámetros de este endpoint están
-definidos en [Parámetros comunes](#factura-compra-parametros-comunes)
-
-## <span style="display: none">Factura-Compra-</span>Parámetros comunes
-
-Los parámetros siguientes son comunes
-a todos los endpoints de facturas de compra electrónicas.
-
-> Ejemplo
-
-```json
-{
-    "user": "12.345.678-9",
-    "password": "password",
-    "certificate_password": "1234",
-    "description": "Invoice emitida el 05/01/2021, $10.341 CLP",
-    "service": {
-      "rut": "59292930",
-      "dv": "9",
-      "address": "410 Terry Avenue North",
-      "comuna": "Seattle",
-      "city": "Seattle",
-      "business_name": "AMAZON WEB SERVICES, INC."
-    },
-    "invoice": {
-        "day": "05",
-        "month": "01",
-        "year": "2021",
-        "chargeClp": "10341"
-    }
-}
-```
-
-| Parámetro              | Tipo         | Descripción                                                                            |
-|------------------------|--------------|----------------------------------------------------------------------------------------|
-| `user`                 | **string**   | RUT del usuario del SII. Debe estar escrito con puntos y guión.                        |
-| `password`             | **string**   | Contraseña del usuario del SII.                                                        |
-| `certificate_password` | **string**   | Contraseña para firmar facturas.                                                       |
-| `description`          | **string**   | Descripción de la factura a emitir.                                                    |
-| `service`              | **Business** | Información del servicio para el cual se hace esta factura. Ver [Business](#business). |
-| `invoice`              | **Invoice**  | Información de la factura original extranjera. Ver [Invoice](#invoice).                |
+<%= partial "includes/params_buy_invoice" %>
 
 ## Definición de objetos
 
