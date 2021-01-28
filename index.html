@@ -279,7 +279,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-3eb8d86c.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-e033bdd3.js"></script>
 
@@ -288,7 +288,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -296,12 +296,11 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <div class="logo-wrapper">
+        <img src="images/cardda_logo-bededbb1.svg" class="logo" alt="" />
+      </div>
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="json">json</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -309,282 +308,551 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#introduccion" class="toc-h1 toc-link" data-title="Introducción">Introducción</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#introduccion-la-api-de-cardda-crawler" class="toc-h2 toc-link" data-title="La API de Cardda Crawler">La API de Cardda Crawler</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#definicion-de-objetos" class="toc-h1 toc-link" data-title="Definición de objetos">Definición de objetos</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#definicion-de-objetos-charge" class="toc-h2 toc-link" data-title="Charge">Charge</a>
+                  </li>
+                  <li>
+                    <a href="#definicion-de-objetos-business" class="toc-h2 toc-link" data-title="Business">Business</a>
+                  </li>
+                  <li>
+                    <a href="#definicion-de-objetos-invoice" class="toc-h2 toc-link" data-title="Invoice">Invoice</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#facturas-de-venta-electronica" class="toc-h1 toc-link" data-title="Facturas de venta electrónica">Facturas de venta electrónica</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#facturas-de-venta-electronica-generar-un-preview" class="toc-h2 toc-link" data-title="Generar un preview">Generar un preview</a>
+                  </li>
+                  <li>
+                    <a href="#facturas-de-venta-electronica-emitir-una-factura" class="toc-h2 toc-link" data-title="Emitir una factura">Emitir una factura</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#facturas-de-compra-electronica" class="toc-h1 toc-link" data-title="Facturas de compra electrónica">Facturas de compra electrónica</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#facturas-de-compra-electronica-generar-un-preview" class="toc-h2 toc-link" data-title="Generar un preview">Generar un preview</a>
+                  </li>
+                  <li>
+                    <a href="#facturas-de-compra-electronica-emitir-una-factura" class="toc-h2 toc-link" data-title="Emitir una factura">Emitir una factura</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='introduccion'>Introducción</h1><h2 id='introduccion-la-api-de-cardda-crawler'>La API de Cardda Crawler</h2>
+<p>Bienvenido a la documentación de la API de Cardda Crawler! 👏</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Puedes usar esta API para acceder a endpoints que permiten
+automatizar tareas de emisión de facturas en el SII. </p>
+<h1 id='definicion-de-objetos'>Definición de objetos</h1><h2 id='definicion-de-objetos-charge'>Charge</h2>
+<p>Objeto correspondiente a los datos de un producto de 
+una factura electrónica del SII.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
 <blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Ejemplo</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Servicio digital"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prestación de servicio de pago y gestión en Amazon AWS"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDCLP"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"733.73"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"121.12"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Descripción</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td><code>name</code></td>
+<td><strong>string</strong></td>
+<td>Nombre del producto.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><strong>string</strong></td>
+<td>Descripción del producto.</td>
+</tr>
+<tr>
+<td><code>unit</code></td>
+<td><strong>string</strong></td>
+<td>Tipo de unidad del producto.</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td><strong>double</strong></td>
+<td>Precio de una unidad del producto.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td><strong>double</strong></td>
+<td>Cantidad de unidades del producto.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='definicion-de-objetos-business'>Business</h2>
+<p>Objeto que describe la información de un servicio
+dado por terceros.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Ejemplo</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+  </span><span class="nl">"rut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59292930"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"410 Terry Avenue North"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comuna"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seattle"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seattle"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMAZON WEB SERVICES, INC."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Descripción</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td><code>rut</code></td>
+<td><strong>string</strong></td>
+<td>RUT de la empresa. No debe llevar puntos ni dígito verificador.</td>
+</tr>
+<tr>
+<td><code>dv</code></td>
+<td><strong>string</strong></td>
+<td>Dígito verificador del RUT de la empresa.</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td><strong>string</strong></td>
+<td>Dirección legal de la empresa.</td>
+</tr>
+<tr>
+<td><code>comuna</code></td>
+<td><strong>string</strong></td>
+<td>Comuna en la que está ubicada la empresa.</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td><strong>string</strong></td>
+<td>Ciudad en la que está ubicada la empresa.</td>
+</tr>
+<tr>
+<td><code>business_name</code></td>
+<td><strong>string</strong></td>
+<td>Razón social de la empresa.</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
+<h4 id='definicion-de-objetos-business-nota'>Nota</h4>
+<p>El nombre <code>comuna</code> no tiene un equivalente en inglés, por lo que decidimos no traducirlo y utilizar el mismo valor que en <code>city</code> para servicios extranjeros.</p>
+<h2 id='definicion-de-objetos-invoice'>Invoice</h2>
+<p>Objeto que describe datos de una factura extranjera.</p>
 
-<p>The Kittn API uses the following error codes:</p>
-
+<blockquote>
+<p>Ejemplo</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"chargeClp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90548"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Descripción</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td><code>day</code></td>
+<td><strong>string</strong></td>
+<td>Día en que se emitió la factura. Debe tener dos dígitos, si es menor a 10 se debe rellenar con 0 al principio.</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td><code>month</code></td>
+<td><strong>string</strong></td>
+<td>Mes en que se emitió la factura. Debe tener dos dígitos, si es menor a 10 se debe rellenar con 0 al principio.</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td><code>year</code></td>
+<td><strong>string</strong></td>
+<td>Año en que se emitió la factura.</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td><code>chargeClp</code></td>
+<td><strong>string</strong></td>
+<td>Monto de la factura en pesos chilenos. Si la factura es en dólares, este monto debe corresponder al valor del dólar en el día posterior a la emisión de esta.</td>
+</tr>
+</tbody></table>
+<h1 id='facturas-de-venta-electronica'>Facturas de venta electrónica</h1>
+<p>En esta sección verás los endpoints disponibles para generar facturas electrónicas de manera
+automática. </p>
+<h2 id='facturas-de-venta-electronica-generar-un-preview'>Generar un preview</h2>
+<p>Generar una visualización de una factura de venta electrónica sin emitirla.</p>
+
+<table><thead>
+<tr>
+<th>Método</th>
+<th>Endpoint</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>POST</code></td>
+<td><code>/sii_preview_invoice</code></td>
+</tr>
+</tbody></table>
+
+<p>Si la operación es exitosa, retorna una captura
+con los datos rellenados en el formulario del SII.</p>
+<h3 id='facturas-de-venta-electronica-generar-un-preview-parametros'>Parámetros</h3>
+<blockquote>
+<p>Ejemplo</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.345.678-9"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"certificate_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"987654321"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56912345678"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contact_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tulio Triviño"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"charges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Servicio digital"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prestación de servicio de pago y gestión en Amazon AWS"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDCLP"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"733.73"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"121.12"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<table><thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>user</code></td>
+<td><strong>string</strong></td>
+<td>RUT del usuario del SII. Debe estar escrito con puntos y guión.</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td><code>password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña del usuario del SII.</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td><code>certificate_password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña para firmar facturas.</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td><code>rut</code></td>
+<td><strong>string</strong></td>
+<td>RUT del receptor de la factura de venta. No debe tener puntos ni guión.</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td><code>phone</code></td>
+<td><strong>string</strong></td>
+<td>Teléfono de contacto del receptor de la factura de venta.</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td><code>contact_name</code></td>
+<td><strong>string</strong></td>
+<td>Nombre de contacto del receptor de la factura de venta.</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td><code>charges</code></td>
+<td><strong>array[Charge]</strong></td>
+<td>Lista de cargos para cada producto. Ver <a href="#definicion-de-objetos-charge">Charge</a></td>
+</tr>
+</tbody></table>
+<h2 id='facturas-de-venta-electronica-emitir-una-factura'>Emitir una factura</h2>
+<p>Emitir una factura de venta electrónica en el SII.</p>
+
+<table><thead>
+<tr>
+<th>Método</th>
+<th>Endpoint</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>POST</code></td>
+<td><code>/sii_create_invoice</code></td>
+</tr>
+</tbody></table>
+
+<p>Si la operación es exitosa, retorna un JSON
+con la <code>url</code> del pdf de la factura.</p>
+<h3 id='facturas-de-venta-electronica-emitir-una-factura-parametros'>Parámetros</h3>
+<blockquote>
+<p>Ejemplo</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.345.678-9"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"certificate_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"987654321"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56912345678"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contact_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tulio Triviño"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"charges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Servicio digital"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prestación de servicio de pago y gestión en Amazon AWS"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDCLP"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"733.73"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"121.12"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<table><thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>user</code></td>
+<td><strong>string</strong></td>
+<td>RUT del usuario del SII. Debe estar escrito con puntos y guión.</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td><code>password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña del usuario del SII.</td>
+</tr>
+<tr>
+<td><code>certificate_password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña para firmar facturas.</td>
+</tr>
+<tr>
+<td><code>rut</code></td>
+<td><strong>string</strong></td>
+<td>RUT del receptor de la factura de venta. No debe tener puntos ni guión.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td><strong>string</strong></td>
+<td>Teléfono de contacto del receptor de la factura de venta.</td>
+</tr>
+<tr>
+<td><code>contact_name</code></td>
+<td><strong>string</strong></td>
+<td>Nombre de contacto del receptor de la factura de venta.</td>
+</tr>
+<tr>
+<td><code>charges</code></td>
+<td><strong>array[Charge]</strong></td>
+<td>Lista de cargos para cada producto. Ver <a href="#definicion-de-objetos-charge">Charge</a></td>
+</tr>
+</tbody></table>
+<h1 id='facturas-de-compra-electronica'>Facturas de compra electrónica</h1>
+<p>Cardda Crawler no solo puede emitir facturas de venta,
+sino también facturas de compra a servicios extranjeros, los endpoints descritos acá
+explican como puedes hacerlo.</p>
+<h2 id='facturas-de-compra-electronica-generar-un-preview'>Generar un preview</h2>
+<p>Generar una visualización de una factura de compra electrónica sin emitirla.</p>
+
+<table><thead>
+<tr>
+<th>Método</th>
+<th>Endpoint</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>POST</code></td>
+<td><code>/sii_preview_buy_invoice</code></td>
+</tr>
+</tbody></table>
+
+<p>Si la operación es exitosa, retorna una captura
+con los datos rellenados en el formulario del SII.</p>
+<h3 id='facturas-de-compra-electronica-generar-un-preview-parametros'>Parámetros</h3>
+<blockquote>
+<p>Ejemplo</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.345.678-9"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"certificate_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice emitida el 05/01/2021, $10.341 CLP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59292930"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"410 Terry Avenue North"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comuna"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seattle"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seattle"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMAZON WEB SERVICES, INC."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chargeClp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10341"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<table><thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>user</code></td>
+<td><strong>string</strong></td>
+<td>RUT del usuario del SII. Debe estar escrito con puntos y guión.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña del usuario del SII.</td>
+</tr>
+<tr>
+<td><code>certificate_password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña para firmar facturas.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><strong>string</strong></td>
+<td>Descripción de la factura a emitir.</td>
+</tr>
+<tr>
+<td><code>service</code></td>
+<td><strong>Business</strong></td>
+<td>Información del servicio para el cual se hace esta factura. Ver <a href="#definicion-de-objetos-business">Business</a>.</td>
+</tr>
+<tr>
+<td><code>invoice</code></td>
+<td><strong>Invoice</strong></td>
+<td>Información de la factura original extranjera. Ver <a href="#definicion-de-objetos-invoice">Invoice</a>.</td>
+</tr>
+</tbody></table>
+<h2 id='facturas-de-compra-electronica-emitir-una-factura'>Emitir una factura</h2>
+<p>Emitir una factura de compra electrónica en el SII.</p>
+
+<table><thead>
+<tr>
+<th>Método</th>
+<th>Endpoint</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>POST</code></td>
+<td><code>/sii_create_buy_invoice</code></td>
+</tr>
+</tbody></table>
+
+<p>Si la operación es exitosa, retorna un JSON
+con la <code>url</code> del pdf de la factura.</p>
+<h3 id='facturas-de-compra-electronica-emitir-una-factura-parametros'>Parámetros</h3>
+<blockquote>
+<p>Ejemplo</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.345.678-9"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"certificate_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice emitida el 05/01/2021, $10.341 CLP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59292930"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"410 Terry Avenue North"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comuna"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seattle"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seattle"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMAZON WEB SERVICES, INC."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chargeClp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10341"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<table><thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>user</code></td>
+<td><strong>string</strong></td>
+<td>RUT del usuario del SII. Debe estar escrito con puntos y guión.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña del usuario del SII.</td>
+</tr>
+<tr>
+<td><code>certificate_password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña para firmar facturas.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><strong>string</strong></td>
+<td>Descripción de la factura a emitir.</td>
+</tr>
+<tr>
+<td><code>service</code></td>
+<td><strong>Business</strong></td>
+<td>Información del servicio para el cual se hace esta factura. Ver <a href="#definicion-de-objetos-business">Business</a>.</td>
+</tr>
+<tr>
+<td><code>invoice</code></td>
+<td><strong>Invoice</strong></td>
+<td>Información de la factura original extranjera. Ver <a href="#definicion-de-objetos-invoice">Invoice</a>.</td>
 </tr>
 </tbody></table>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="json">json</a>
           </div>
       </div>
     </div>

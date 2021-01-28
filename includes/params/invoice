@@ -1,0 +1,64 @@
+<blockquote>
+<p>Ejemplo</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.345.678-9"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"certificate_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"987654321"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56912345678"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contact_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tulio Triviño"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"charges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Servicio digital"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prestación de servicio de pago y gestión en Amazon AWS"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDCLP"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"733.73"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"121.12"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>user</code></td>
+<td><strong>string</strong></td>
+<td>RUT del usuario del SII. Debe estar escrito con puntos y guión.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña del usuario del SII.</td>
+</tr>
+<tr>
+<td><code>certificate_password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña para firmar facturas.</td>
+</tr>
+<tr>
+<td><code>rut</code></td>
+<td><strong>string</strong></td>
+<td>RUT del receptor de la factura de venta. No debe tener puntos ni guión.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td><strong>string</strong></td>
+<td>Teléfono de contacto del receptor de la factura de venta.</td>
+</tr>
+<tr>
+<td><code>contact_name</code></td>
+<td><strong>string</strong></td>
+<td>Nombre de contacto del receptor de la factura de venta.</td>
+</tr>
+<tr>
+<td><code>charges</code></td>
+<td><strong>array[Charge]</strong></td>
+<td>Lista de cargos para cada producto. Ver <a href="#definicion-de-objetos-charge">Charge</a></td>
+</tr>
+</tbody></table>

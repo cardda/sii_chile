@@ -1,0 +1,62 @@
+<blockquote>
+<p>Ejemplo</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.345.678-9"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"certificate_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice emitida el 05/01/2021, $10.341 CLP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59292930"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"410 Terry Avenue North"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comuna"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seattle"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seattle"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMAZON WEB SERVICES, INC."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chargeClp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10341"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Parámetro</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>user</code></td>
+<td><strong>string</strong></td>
+<td>RUT del usuario del SII. Debe estar escrito con puntos y guión.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña del usuario del SII.</td>
+</tr>
+<tr>
+<td><code>certificate_password</code></td>
+<td><strong>string</strong></td>
+<td>Contraseña para firmar facturas.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><strong>string</strong></td>
+<td>Descripción de la factura a emitir.</td>
+</tr>
+<tr>
+<td><code>service</code></td>
+<td><strong>Business</strong></td>
+<td>Información del servicio para el cual se hace esta factura. Ver <a href="#definicion-de-objetos-business">Business</a>.</td>
+</tr>
+<tr>
+<td><code>invoice</code></td>
+<td><strong>Invoice</strong></td>
+<td>Información de la factura original extranjera. Ver <a href="#definicion-de-objetos-invoice">Invoice</a>.</td>
+</tr>
+</tbody></table>
