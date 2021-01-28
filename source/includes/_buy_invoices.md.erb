@@ -1,0 +1,35 @@
+# Facturas de compra electrónica
+
+Cardda Crawler no solo puede emitir facturas de venta,
+sino también facturas de compra a servicios extranjeros, los endpoints descritos acá
+explican como puedes hacerlo.
+
+## Generar un preview
+
+Generar una visualización de una factura de compra electrónica sin emitirla.
+
+| Método | Endpoint                 |
+|--------|--------------------------|
+|`POST`  |`/sii_preview_buy_invoice`|
+
+Si la operación es exitosa, retorna una captura
+con los datos rellenados en el formulario del SII.
+
+### Parámetros
+
+<%= partial "includes/params/buy_invoice" %>
+
+## Emitir una factura
+
+Emitir una factura de compra electrónica en el SII.
+
+| Método | Endpoint                 |
+|--------|--------------------------|
+|`POST`  |`/sii_create_buy_invoice`|
+
+Si la operación es exitosa, retorna un JSON
+con la `url` del pdf de la factura.
+
+### Parámetros
+
+<%= partial "includes/params/buy_invoice" %>

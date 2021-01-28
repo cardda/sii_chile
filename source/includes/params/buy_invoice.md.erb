@@ -1,0 +1,34 @@
+> Ejemplo
+
+```json
+{
+    "user": "12.345.678-9",
+    "password": "password",
+    "certificate_password": "1234",
+    "description": "Invoice emitida el 05/01/2021, $10.341 CLP",
+    "service": {
+      "rut": "59292930",
+      "dv": "9",
+      "address": "410 Terry Avenue North",
+      "comuna": "Seattle",
+      "city": "Seattle",
+      "business_name": "AMAZON WEB SERVICES, INC."
+    },
+    "invoice": {
+        "day": "05",
+        "month": "01",
+        "year": "2021",
+        "chargeClp": "10341"
+    }
+}
+```
+
+| Parámetro              | Tipo         | Descripción                                                                            |
+|------------------------|--------------|----------------------------------------------------------------------------------------|
+| `user`                 | **string**   | RUT del usuario del SII. Debe estar escrito con puntos y guión.                        |
+| `password`             | **string**   | Contraseña del usuario del SII.                                                        |
+| `certificate_password` | **string**   | Contraseña para firmar facturas.                                                       |
+| `description`          | **string**   | Descripción de la factura a emitir.                                                    |
+| `service`              | **Business** | Información del servicio para el cual se hace esta factura. Ver [Business](#definicion-de-objetos-business). |
+| `invoice`              | **Invoice**  | Información de la factura original extranjera. Ver [Invoice](#definicion-de-objetos-invoice).                |
+

@@ -1,0 +1,32 @@
+> Ejemplo
+
+```json
+{
+  "user": "12.345.678-9",
+  "password": "pass",
+  "certificate_password": "1234",
+  "rut": "987654321",
+  "phone": "56912345678",
+  "contact_name": "Tulio Triviño",
+  "charges": [
+    {
+      "name": "Servicio digital",
+      "description": "Prestación de servicio de pago y gestión en Amazon AWS",
+      "unit": "USDCLP",
+      "price": "733.73",
+      "amount": "121.12"
+    }
+  ]
+}
+```
+
+| Parámetro              | Tipo              | Descripción                                                     |
+|------------------------|-------------------|-----------------------------------------------------------------|
+| `user`                 | **string**        | RUT del usuario del SII. Debe estar escrito con puntos y guión. |
+| `password`             | **string**        | Contraseña del usuario del SII.                                 |
+| `certificate_password` | **string**        | Contraseña para firmar facturas.                                |
+| `rut`                  | **string**        | RUT del receptor de la factura de venta. No debe tener puntos ni guión.                             |
+| `phone`                | **string**        | Teléfono de contacto del receptor de la factura de venta.                                           |
+| `contact_name`         | **string**        | Nombre de contacto del receptor de la factura de venta.                                            |
+| `charges`              | **array[Charge]** | Lista de cargos para cada producto. Ver [Charge](#definicion-de-objetos-charge)                                                |
+

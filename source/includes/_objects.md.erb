@@ -1,0 +1,80 @@
+# Definición de objetos
+
+## Charge
+
+Objeto correspondiente a los datos de un producto de 
+una factura electrónica del SII.
+
+> Ejemplo
+
+```json
+{
+  "name": "Servicio digital",
+  "description": "Prestación de servicio de pago y gestión en Amazon AWS",
+  "unit": "USDCLP",
+  "price": "733.73",
+  "amount": "121.12"
+}
+```
+
+| Atributo     | Tipo       | Descripción                        |
+|---------------|------------|------------------------------------|
+| `name`        | **string** | Nombre del producto.               |
+| `description` | **string** | Descripción del producto.          |
+| `unit`        | **string** | Tipo de unidad del producto.       |
+| `price`       | **double** | Precio de una unidad del producto. |
+| `amount`      | **double** | Cantidad de unidades del producto. |
+
+
+## Business
+
+Objeto que describe la información de un servicio
+dado por terceros.
+
+> Ejemplo
+
+```json
+{
+  "rut": "59292930",
+  "dv": "9",
+  "address": "410 Terry Avenue North",
+  "comuna": "Seattle",
+  "city": "Seattle",
+  "business_name": "AMAZON WEB SERVICES, INC."
+}
+```
+
+| Atributo        | Tipo       | Descripción                                                     |
+|-----------------|------------|-----------------------------------------------------------------|
+| `rut`           | **string** | RUT de la empresa. No debe llevar puntos ni dígito verificador. |
+| `dv`            | **string** | Dígito verificador del RUT de la empresa.                       |
+| `address`       | **string** | Dirección legal de la empresa.                                  |
+| `comuna`        | **string** | Comuna en la que está ubicada la empresa.                       |
+| `city`          | **string** | Ciudad en la que está ubicada la empresa.                       |
+| `business_name` | **string** | Razón social de la empresa.                                     |
+
+#### Nota
+
+El nombre `comuna` no tiene un equivalente en inglés, por lo que decidimos no traducirlo y utilizar el mismo valor que en `city` para servicios extranjeros.
+
+## Invoice
+
+Objeto que describe datos de una factura extranjera.
+
+> Ejemplo
+
+```json
+{
+  "day": "01",
+  "month": "01",
+  "year": "2021",
+  "chargeClp": "90548"
+}
+```
+
+| Atributo    | Tipo       | Descripción                                                                                                                                                   |
+|-------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `day`       | **string** | Día en que se emitió la factura. Debe tener dos dígitos, si es menor a 10 se debe rellenar con 0 al principio.                                                |
+| `month`     | **string** | Mes en que se emitió la factura. Debe tener dos dígitos, si es menor a 10 se debe rellenar con 0 al principio.                                                |
+| `year`      | **string** | Año en que se emitió la factura.                                                                                                                              |
+| `chargeClp` | **string** | Monto de la factura en pesos chilenos. Si la factura es en dólares, este monto debe corresponder al valor del dólar en el día posterior a la emisión de esta. |
